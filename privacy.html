@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripThread - Privacy Policy</title>
     <link rel="canonical" href="https://tripthread.app/privacy">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/logo.png">
     <meta name="description" content="TripThread Privacy Policy - Learn how we collect, use, and protect your data.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,20 +145,10 @@
             background-clip: text;
         }
 
-        .logo-icon {
+        .logo-img {
             width: 32px;
             height: 32px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon i {
-            width: 18px;
-            height: 18px;
-            stroke: white;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -385,9 +375,7 @@
     <header>
         <nav>
             <a href="/" class="logo">
-                <div class="logo-icon">
-                    <i data-lucide="route"></i>
-                </div>
+                <img src="/logo.png" alt="TripThread Logo" class="logo-img">
                 TripThread
             </a>
             <ul class="nav-links">

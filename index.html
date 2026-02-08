@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="travel, social, destinations, vacation, trip, connect, travelers, adventure, tourism, explore, community">
     <link rel="canonical" href="https://tripthread.app">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -183,20 +183,10 @@
             letter-spacing: -0.5px;
         }
 
-        .logo-icon {
+        .logo-img {
             width: 36px;
             height: 36px;
-            background: var(--accent-gradient);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: white;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -901,9 +891,7 @@
     <header id="header">
         <nav>
             <a href="/" class="logo">
-                <div class="logo-icon">
-                    <i data-lucide="route"></i>
-                </div>
+                <img src="/logo.png" alt="TripThread Logo" class="logo-img">
                 TripThread
             </a>
             <ul class="nav-links">
@@ -1042,9 +1030,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="/" class="logo">
-                    <div class="logo-icon">
-                        <i data-lucide="route"></i>
-                    </div>
+                    <img src="/logo.png" alt="TripThread Logo" class="logo-img">
                     TripThread
                 </a>
                 <p>Connect with travelers worldwide</p>
