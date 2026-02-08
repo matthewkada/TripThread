@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -168,6 +169,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 28px;
             font-weight: 800;
             text-decoration: none;
@@ -176,23 +180,22 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
-            position: relative;
         }
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
+        .logo-icon {
+            width: 36px;
+            height: 36px;
             background: var(--accent-gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .logo:hover::after {
-            transform: scaleX(1);
+        .logo-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: white;
         }
 
         .nav-links {
@@ -284,8 +287,9 @@
             animation: fadeInUp 0.8s ease;
         }
 
-        .hero-badge::before {
-            content: '✨';
+        .hero-badge i {
+            width: 16px;
+            height: 16px;
         }
 
         .hero h1 {
@@ -351,6 +355,11 @@
             overflow: hidden;
         }
 
+        .cta-button i {
+            width: 20px;
+            height: 20px;
+        }
+
         .cta-button.primary {
             background: var(--accent-gradient);
             background-size: 200% 200%;
@@ -379,10 +388,6 @@
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-button .icon {
-            font-size: 20px;
         }
 
         /* Floating Elements */
@@ -436,7 +441,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+        }
+
+        .float-card .card-icon i {
+            width: 20px;
+            height: 20px;
+            stroke: white;
         }
 
         .float-card .card-text {
@@ -566,10 +576,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
             margin-bottom: 24px;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
             transition: transform 0.4s ease;
+        }
+
+        .feature-icon i {
+            width: 28px;
+            height: 28px;
+            stroke: white;
         }
 
         .feature-card:hover .feature-icon {
@@ -707,7 +722,13 @@
         }
 
         .app-store-btn .store-icon {
-            font-size: 32px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .app-store-btn .store-icon i {
+            width: 32px;
+            height: 32px;
         }
 
         .app-store-btn .store-text {
@@ -878,7 +899,12 @@
 
     <header id="header">
         <nav>
-            <a href="/" class="logo">TripThread</a>
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="route"></i>
+                </div>
+                TripThread
+            </a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#download">Download</a></li>
@@ -897,27 +923,30 @@
         <!-- Floating Cards -->
         <div class="floating-cards">
             <div class="float-card card-1">
-                <div class="card-icon">🌴</div>
-                <span class="card-text">Cancún, Mexico</span>
+                <div class="card-icon"><i data-lucide="palm-tree"></i></div>
+                <span class="card-text">Bali, Indonesia</span>
             </div>
             <div class="float-card card-2">
-                <div class="card-icon">✈️</div>
+                <div class="card-icon"><i data-lucide="plane"></i></div>
                 <span class="card-text">12 travelers matched</span>
             </div>
             <div class="float-card card-3">
-                <div class="card-icon">💬</div>
+                <div class="card-icon"><i data-lucide="message-circle"></i></div>
                 <span class="card-text">New message!</span>
             </div>
         </div>
 
         <div class="hero-content">
-            <div class="hero-badge">Now available on the App Store</div>
+            <div class="hero-badge">
+                <i data-lucide="sparkles"></i>
+                Now available on the App Store
+            </div>
             <h1>Connect with <span class="gradient-text">Travelers</span><br>Worldwide</h1>
             <p>Discover who's traveling to the same destination, at the same time, as you. Start connecting before you
                 even pack your bags.</p>
             <div class="hero-buttons">
                 <a href="#download" class="cta-button primary">
-                    <span class="icon">📱</span>
+                    <i data-lucide="download"></i>
                     Download Free
                 </a>
                 <a href="#features" class="cta-button secondary">
@@ -935,33 +964,33 @@
         </div>
         <div class="feature-grid">
             <div class="feature-card reveal">
-                <div class="feature-icon">🌍</div>
+                <div class="feature-icon"><i data-lucide="globe"></i></div>
                 <h3>Find Travelers</h3>
                 <p>See who's going where and when. Connect with fellow travelers at your destination before you arrive.
                 </p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">💬</div>
+                <div class="feature-icon"><i data-lucide="messages-square"></i></div>
                 <h3>Join Threads</h3>
                 <p>Start and join conversations about resorts, hotels, cruises, and destinations in real-time.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">📹</div>
+                <div class="feature-icon"><i data-lucide="video"></i></div>
                 <h3>Share Videos</h3>
                 <p>Upload and share travel videos. Document your adventures and inspire others to explore.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon"><i data-lucide="users"></i></div>
                 <h3>Real-Time Chat</h3>
                 <p>Direct message other travelers instantly. Build meaningful connections worldwide.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">✈️</div>
+                <div class="feature-icon"><i data-lucide="map-pin"></i></div>
                 <h3>Discover Destinations</h3>
                 <p>Browse resorts, hotels, and cruises. Read reviews and find hidden gems from the community.</p>
             </div>
             <div class="feature-card reveal">
-                <div class="feature-icon">🏆</div>
+                <div class="feature-icon"><i data-lucide="award"></i></div>
                 <h3>Earn Badges</h3>
                 <p>Unlock travel achievements and showcase your adventures with profile badges.</p>
             </div>
@@ -983,7 +1012,7 @@
                 <div class="stat-label">Connections Made</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">4.9★</div>
+                <div class="stat-number">4.9</div>
                 <div class="stat-label">App Store Rating</div>
             </div>
         </div>
@@ -998,7 +1027,7 @@
             <p>Join thousands of travelers already connecting worldwide. Available now on the App Store.</p>
             <div class="app-buttons">
                 <a href="https://apps.apple.com/app/tripthread/id1234567890" class="app-store-btn">
-                    <span class="store-icon">🍎</span>
+                    <div class="store-icon"><i data-lucide="apple"></i></div>
                     <div class="store-text">
                         <span>Download on the</span>
                         <strong>App Store</strong>
@@ -1011,7 +1040,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="/" class="logo">TripThread</a>
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="route"></i>
+                    </div>
+                    TripThread
+                </a>
                 <p>Connect with travelers worldwide</p>
             </div>
             <div class="footer-links">
@@ -1026,6 +1060,9 @@
     </footer>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {

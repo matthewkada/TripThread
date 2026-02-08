@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -131,6 +132,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 24px;
             font-weight: 800;
             text-decoration: none;
@@ -138,6 +142,22 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon i {
+            width: 18px;
+            height: 18px;
+            stroke: white;
         }
 
         .nav-links {
@@ -271,6 +291,15 @@
 
         .content-card h3 {
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-card h3 i {
+            width: 20px;
+            height: 20px;
+            stroke: #f093fb;
         }
 
         .content-card ul,
@@ -354,7 +383,12 @@
 
     <header>
         <nav>
-            <a href="/" class="logo">TripThread</a>
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="route"></i>
+                </div>
+                TripThread
+            </a>
             <ul class="nav-links">
                 <li><a href="/#features">Features</a></li>
                 <li><a href="/#download">Download</a></li>
@@ -382,7 +416,7 @@
         <h2 class="reveal">1. Information We Collect</h2>
 
         <div class="content-card reveal">
-            <h3>Account Information</h3>
+            <h3><i data-lucide="user"></i> Account Information</h3>
             <ul>
                 <li><strong>Apple ID:</strong> Email address and name (via Sign in with Apple)</li>
                 <li><strong>Profile Data:</strong> Username, profile photo, bio, travel preferences</li>
@@ -390,7 +424,7 @@
         </div>
 
         <div class="content-card reveal">
-            <h3>User-Generated Content</h3>
+            <h3><i data-lucide="file-text"></i> User-Generated Content</h3>
             <ul>
                 <li><strong>Threads & Posts:</strong> Text content, tags, hashtags</li>
                 <li><strong>Media:</strong> Photos and videos you upload</li>
@@ -400,7 +434,7 @@
         </div>
 
         <div class="content-card reveal">
-            <h3>Technical Data</h3>
+            <h3><i data-lucide="monitor-smartphone"></i> Technical Data</h3>
             <ul>
                 <li><strong>Device Information:</strong> Device model, operating system version</li>
                 <li><strong>Usage Data:</strong> App interactions, features used</li>
@@ -426,7 +460,7 @@
         <p class="reveal">TripThread uses Firebase (Google) as our cloud infrastructure provider:</p>
 
         <div class="content-card reveal">
-            <h3>Firebase Authentication</h3>
+            <h3><i data-lucide="key"></i> Firebase Authentication</h3>
             <ul>
                 <li>Manages Sign in with Apple</li>
                 <li>Stores secure session tokens</li>
@@ -435,7 +469,7 @@
         </div>
 
         <div class="content-card reveal">
-            <h3>Firebase Firestore</h3>
+            <h3><i data-lucide="database"></i> Firebase Firestore</h3>
             <ul>
                 <li>Stores user profiles and settings</li>
                 <li>Hosts threads, posts, and content</li>
@@ -444,7 +478,7 @@
         </div>
 
         <div class="content-card reveal">
-            <h3>Firebase Storage</h3>
+            <h3><i data-lucide="hard-drive"></i> Firebase Storage</h3>
             <ul>
                 <li>Stores photos and videos you upload</li>
                 <li>Hosts profile images</li>
@@ -483,7 +517,7 @@
         </ul>
 
         <div class="content-card reveal">
-            <h3>How to Delete Your Account</h3>
+            <h3><i data-lucide="trash-2"></i> How to Delete Your Account</h3>
             <ol>
                 <li>Open TripThread</li>
                 <li>Go to your Profile</li>
@@ -542,6 +576,9 @@
     </footer>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
         // Reveal animations on scroll
         const revealElements = document.querySelectorAll('.reveal');
 
